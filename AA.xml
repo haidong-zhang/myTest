@@ -1,0 +1,40 @@
+<Request>
+	<hospitalCode>100122001</hospitalCode>
+	<patientCode>3032800</patientCode>
+	<orderCode>13035293||31</orderCode>
+	<receiptCode>26840289</receiptCode>
+	<consigneeName>黄钰晖</consigneeName>
+	<consigneeTel>18819457256</consigneeTel>
+	<consigneeAddress>广东省,深圳市,罗湖区,深圳市中医院</consigneeAddress>
+	<expressDate></expressDate>
+	<expressTime></expressTime>
+	<isHosAddr>2</isHosAddr>
+	<vendor>KingDee</vendor>
+</Request>
+
+<Request>
+	<hospitalCode>100122001</hospitalCode>
+	<patientCode>3032800</patientCode>
+	<orderCode>13035293||64</orderCode>
+	<receiptCode>26840291</receiptCode>
+	<consigneeName>黄钰晖</consigneeName>
+	<consigneeTel>18819457256</consigneeTel>
+	<consigneeAddress>广东省,深圳市,罗湖区,深圳市中医院干净利落</consigneeAddress>
+	<expressDate></expressDate>
+	<expressTime></expressTime>
+	<isHosAddr>2</isHosAddr>
+	<vendor>KingDee</vendor>
+</Request>
+
+
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:tem="http://tempuri.org">
+	<soapenv:Header />
+	<soapenv:Body>
+		<tem:RecipeExpress>
+			<tem:xmlRequest><![CDATA[<Request><hospitalCode>100122001</hospitalCode><patientCode>3032800</patientCode><orderCode>13035293||64</orderCode><receiptCode>26840291</receiptCode><consigneeName>黄钰晖</consigneeName><consigneeTel>18819457256</consigneeTel><consigneeAddress>广东省,深圳市,罗湖区,深圳市中医院干净利落</consigneeAddress><expressDate></expressDate><expressTime></expressTime><isHosAddr>2</isHosAddr><vendor>KingDee</vendor></Request>]]></tem:xmlRequest>
+		</tem:RecipeExpress>
+	</soapenv:Body>
+</soapenv:Envelope>
