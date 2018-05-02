@@ -6,7 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Student {
-	    private int id;  
+	    private Integer id;  
 	    private String name;
 	    private String email;  
 	    private List<String> address;  
@@ -61,5 +61,21 @@ public class Student {
 	    public String toString() {  
 	        return this.name + "#" + this.id + "#" + this.address + "#"  
 	                + this.birthday + "#" + this.email;  
-	    }  
+	    }
+		public Student() {
+			super();
+		}
+
+		public Student(int id, String name) {
+			super();
+			this.id = id;
+			this.name = name;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			Student s = (Student)obj;
+			return this.id.equals(s.getId());
+		}  
+		
 	}  

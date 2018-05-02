@@ -94,5 +94,14 @@ public class TestCalendar {
 		 //下面两者之间有什么区别？
 		 System.out.println("月中周中的日："+calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
 		 System.out.println("月中的周："+calendar.get(Calendar.WEEK_OF_MONTH));
+		 
+		 calendar.set(Calendar.DAY_OF_WEEK, 1);
+		 System.out.println("================================================");
+		 System.out.println("设置后月中的日："+calendar.get(Calendar.DAY_OF_MONTH));
+		 System.out.println("设置后周中的日"+calendar.get(Calendar.DAY_OF_WEEK));
+		 calendar.set(Calendar.DAY_OF_WEEK, calendar.getActualMaximum(Calendar.DAY_OF_WEEK));
+		 System.out.println("================================================");
+		 System.out.println("设置后月中的日："+calendar.get(Calendar.DAY_OF_MONTH));
+		 System.out.println("设置后周中的日"+calendar.get(Calendar.DAY_OF_WEEK));
 	}
 }
