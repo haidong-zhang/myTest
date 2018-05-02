@@ -1,6 +1,5 @@
 package com.haidong.test;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -62,7 +61,7 @@ public class TestCalendar {
 	}
 	
 	@Test
-	public void test3() throws Exception{
+	public void testJudgeTime() throws Exception{
 		Calendar today = Calendar.getInstance();
 		
 		String beginString = new SimpleDateFormat("yyyyMMdd").format(new Date());
@@ -84,5 +83,16 @@ public class TestCalendar {
 		int compareTo2 = today.compareTo(endDate);
 		System.out.println(compareTo1>0 && compareTo2<0);
 		
+	}
+	
+	@Test
+	public void testCalendarGetMethod(){
+		 Calendar calendar = Calendar.getInstance();
+		 System.out.println("月中的日："+calendar.get(Calendar.DAY_OF_MONTH));
+		 System.out.println("周中的日："+calendar.get(Calendar.DAY_OF_WEEK));
+		 System.out.println("年中的日："+calendar.get(Calendar.DAY_OF_YEAR));
+		 //下面两者之间有什么区别？
+		 System.out.println("月中周中的日："+calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
+		 System.out.println("月中的周："+calendar.get(Calendar.WEEK_OF_MONTH));
 	}
 }

@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.haidong</groupId>
-	<artifactId>SqlServerTest</artifactId>
+	<artifactId>myTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -57,36 +57,42 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.3.6</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>m2-repo.net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.2.3</version>
 			<classifier>jdk15</classifier>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency>
 			<groupId>com.kingdeehit.cloud</groupId>
 			<artifactId>cloud-files-contract</artifactId>
 			<version>5.0.1.RELEASE</version>
 		</dependency> -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.kingdeehit.mobile</groupId>
 			<artifactId>service-utils</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>jaxen</groupId>
 			<artifactId>jaxen</artifactId>
 			<version>1.1-beta-6</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>sun.misc.BASE64Decoder</groupId>
 			<artifactId>sun.misc.BASE64Decoder</artifactId>
 			<version>1.0</version>
-		</dependency>
-		<dependency>
+		</dependency> -->
+		<!-- <dependency>
 			<groupId>com.kingdeehit.mobile</groupId>
 			<artifactId>interface-util</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
+		</dependency> -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.1</version>
+			<classifier>jdk15</classifier>
 		</dependency>
 	</dependencies>
 	<build>
