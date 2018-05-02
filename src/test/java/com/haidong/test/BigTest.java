@@ -247,5 +247,4 @@ public class BigTest extends Thread{
 	 public  void testPolymorphism() {
 		 
 	 }
-	 
 }
