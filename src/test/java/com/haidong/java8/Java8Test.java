@@ -25,8 +25,35 @@ public class Java8Test {
 		System.out.println(students);
 		List<Integer> collect = students.stream().map(item->item.getId()).distinct().collect(Collectors.toList());
 		System.out.println(collect);
-		
+		System.out.println("¹þ¹þ");
 //		students.stream().
 		
+	}
+	
+	@Test
+	public void testStreamFilter(){
+		List<String> nums = new ArrayList<>();
+		nums.add("1");
+		nums.add("2");
+		nums.add("3");
+		nums = nums.stream().filter(item -> {
+			return true;
+		}).collect(Collectors.toList());
+		System.out.println(nums);
+	}
+	
+	public boolean testUserNamePassword(String userName,String password){
+		if(userName.length()==0 || password.length()==0){
+			return false;
+		}
+		if(userName.equals(password)){
+			return false;
+		}
+		return password.matches("^(?:(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9])).{6,18}$");
+	}
+	
+	@Test
+	public void testpassowrd(){
+		System.out.println(testUserNamePassword("111","hd199931"));
 	}
 }
