@@ -25,9 +25,8 @@ public class Java8Test {
 		System.out.println(students);
 		List<Integer> collect = students.stream().map(item->item.getId()).distinct().collect(Collectors.toList());
 		System.out.println(collect);
-		System.out.println("¹þ¹þ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½");
 //		students.stream().
-		
 	}
 	
 	@Test
