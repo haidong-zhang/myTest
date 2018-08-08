@@ -11,11 +11,11 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>6.1.0.jre7</version>
 		</dependency> -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.8</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>xstream</groupId>
 			<artifactId>xstream</artifactId>
@@ -94,6 +94,14 @@
 			<version>2.1</version>
 			<classifier>jdk15</classifier>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.jgroups/jgroups -->
+		<dependency>
+		    <groupId>org.jgroups</groupId>
+		    <artifactId>jgroups</artifactId>
+		    <version>3.2.7.Final</version>
+		</dependency>
+				
 	</dependencies>
 	<build>
 		<plugins>

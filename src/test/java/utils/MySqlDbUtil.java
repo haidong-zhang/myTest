@@ -26,9 +26,9 @@ public class MySqlDbUtil {
      * ×°ÔØÇý¶¯ 
      */  
     static {  
-        url="jdbc:mysql://127.0.0.1:3306/shimian_test"; 
+        url="jdbc:mysql://127.0.0.1:3306/a_haidong"; 
         userName="root";  
-        password="root";  
+        password="1234";  
         driver="org.gjt.mm.mysql.Driver";  
         try {  
             Class.forName(driver);  
