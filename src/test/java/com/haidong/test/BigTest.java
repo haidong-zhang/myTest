@@ -247,4 +247,9 @@ public class BigTest extends Thread{
 	 public  void testPolymorphism() {
 		 
 	 }
+	 @Test
+	 public  void testStringLowerCaseWithChinese() {
+		 String s = "¶«";
+		 System.out.println(s.toLowerCase());
+	 }
 }
