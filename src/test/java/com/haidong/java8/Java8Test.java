@@ -1,12 +1,12 @@
 package com.haidong.java8;
 
+import com.google.common.collect.Lists;
+import com.haidong.entity.Student;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import com.haidong.entity.Student;
 
 public class Java8Test {
 	@Test
@@ -24,20 +24,22 @@ public class Java8Test {
 		
 		System.out.println(students);
 		List<Integer> collect = students.stream().map(item->item.getId()).distinct().collect(Collectors.toList());
-		System.out.println(collect);
-		System.out.println("����");
+//		System.out.println(collect);
 //		students.stream().
+		collect.forEach(System.out::println);
 	}
 	
 	@Test
 	public void testStreamFilter(){
-		List<String> nums = new ArrayList<>();
-		nums.add("1");
-		nums.add("2");
-		nums.add("3");
-		nums = nums.stream().filter(item -> {
-			return true;
-		}).collect(Collectors.toList());
+//		List<Integer> nums = new ArrayList<>();
+//		nums.add(1);
+//		nums.add(2);
+//		nums.add(3);
+//		nums.add(3);
+//		nums.stream().filter(item ->  item != 3).count();
+
+		List<Integer> nums = Lists.newArrayList(1,null,3,4,null,6,1);
+		nums = nums.stream().filter(num -> num != null).distinct().collect(Collectors.toList());
 		System.out.println(nums);
 	}
 	
