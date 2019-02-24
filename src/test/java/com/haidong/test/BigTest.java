@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,6 +28,7 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.junit.Test;
 
+import com.haidong.database.DBUtil;
 import com.haidong.entity.Person;
 import com.haidong.entity.Student;
 import com.haidong.entity.SubThread;
@@ -32,7 +36,7 @@ import com.ibm.icu.text.DecimalFormat;
 
 public class BigTest extends Thread{
 	/**
-	 * ²âÊÔbeanUtil
+	 * ï¿½ï¿½ï¿½ï¿½beanUtil
 	 * @throws InvocationTargetException 
 	 * @throws IllegalAccessException 
 	 */
@@ -43,19 +47,19 @@ public class BigTest extends Thread{
 		list.add("bb");
 		list.add("aa");
 		list.add("bb");
-		Person p = new Person("ÕÅÈý","ÄÐ",list);
+		Person p = new Person("ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½",list);
 		Student s = new Student();
 		BeanUtils.copyProperties(s, p);
 		System.out.println(s);
 	}
 	
 	/**
-	 * ²âÊÔ¶àÏß³Ì
+	 * ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ß³ï¿½
 	 */
 	@Test
 	public void testThread(){
 		SubThread th1 = new SubThread();
-		th1.setName("Ïß³Ì1");
+		th1.setName("ï¿½ß³ï¿½1");
 		System.out.println(getName());
 		th1.start();
 	}
@@ -64,7 +68,7 @@ public class BigTest extends Thread{
 		System.out.println(bt.getName());
 	}*/
 	/**
-	 * ²âÊÔÈÕÆÚ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @throws ParseException
 	 */
 	@Test
@@ -89,7 +93,7 @@ public class BigTest extends Thread{
                 age--;  
             }  
         }  
-		System.out.println(age+"Ëê");
+		System.out.println(age+"ï¿½ï¿½");
 	}
 	
 	public  Date parse(String idCardNo) throws ParseException {  
@@ -159,13 +163,13 @@ public class BigTest extends Thread{
 	
 	@Test
 	public void testNewLine(){
-		System.out.print("ÄãºÃ\r\n");
-		System.out.print("ÎÒºÃ");
-		System.out.print("´ó¼ÒºÃ");
+		System.out.print("ï¿½ï¿½ï¿½\r\n");
+		System.out.print("ï¿½Òºï¿½");
+		System.out.print("ï¿½ï¿½Òºï¿½");
 	}
 	
 	/**
-	 * ²âÊÔjson
+	 * ï¿½ï¿½ï¿½ï¿½json
 	 */
 	@Test
 	public void testJson(){
@@ -176,7 +180,7 @@ public class BigTest extends Thread{
 	}
 	
 	/**
-	 * ²âÊÔbyte
+	 * ï¿½ï¿½ï¿½ï¿½byte
 	 */
 	@Test
 	public void testByte(){
@@ -184,12 +188,12 @@ public class BigTest extends Thread{
 	}
 	
 	/**
-	 * Ê¯ÃÞÏØÈËÃñÒ½Ôº¼ì²é±¨¸æ½âÎöxml
+	 * Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½Ôºï¿½ï¿½é±¨ï¿½ï¿½ï¿½ï¿½ï¿½xml
 	 * @throws Exception
 	 */
 	 @Test
 	 public void testParseXml() throws Exception{
-		 FileInputStream fis = new FileInputStream("F:\\kingdee\\Ò½Ôº\\a_Ê¯ÃÞÏØÈËÃñÒ½Ôº\\1010\\jiancha.xml");
+		 FileInputStream fis = new FileInputStream("F:\\kingdee\\Ò½Ôº\\a_Ê¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½Ôº\\1010\\jiancha.xml");
 		 BufferedReader br = new BufferedReader(new InputStreamReader(fis,"utf-8"));
 		 String str = null;
 		 StringBuilder builder = new StringBuilder();
@@ -198,22 +202,22 @@ public class BigTest extends Thread{
 		 }
 		 br.close();
 		 Document ele = DocumentHelper.parseText(builder.toString());
-//		 String xpath = "//Compend[@Name='²¡ÈËÐÅÏ¢']";
+//		 String xpath = "//Compend[@Name='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢']";
 //		 Element ele = (Element)doc.selectSingleNode(xpath);
 //		 Node ele = doc.selectSingleNode(xpath);
-		 String xpath = "//Element[@Name='ÐÕÃû']";
+		 String xpath = "//Element[@Name='ï¿½ï¿½ï¿½ï¿½']";
 		 Element element = (Element)ele.selectSingleNode(xpath);
 		 System.out.println(element.getText());
 		 
-		 xpath = "//Element[@Name='ÐÔ±ð']";
+		 xpath = "//Element[@Name='ï¿½Ô±ï¿½']";
 		 element = (Element)ele.selectSingleNode(xpath);
 		 System.out.println(element.getText());
 		 
-		 xpath = "//Element[@Name='ÄêÁä']";
+		 xpath = "//Element[@Name='ï¿½ï¿½ï¿½ï¿½']";
 		 element = (Element)ele.selectSingleNode(xpath);
 		 System.out.println(element.getText());
 		 
-		 xpath = "//Element[@Name='ÄêÁä']";
+		 xpath = "//Element[@Name='ï¿½ï¿½ï¿½ï¿½']";
 		 element = (Element)ele.selectSingleNode(xpath);
 		 System.out.println(element.getText());
 		 
@@ -241,15 +245,20 @@ public class BigTest extends Thread{
 	 		System.out.println(sb.toString()); 
 	 	}
 	 /**
-	  * ¶àÌ¬
+	  * ï¿½ï¿½Ì¬
 	  */
 	 @Test
-	 public  void testPolymorphism() {
-		 
+	 public  void testSelectValueNull() throws Exception{
+		 Connection conn = DBUtil.getConn();
+		 System.out.println(conn);
+		 String name = null;
+		PreparedStatement prepareStatement = conn.prepareStatement("select * from notice where name is null");
+		ResultSet executeQuery = prepareStatement.executeQuery();
+		System.out.println(executeQuery.next());
 	 }
 	 @Test
 	 public  void testStringLowerCaseWithChinese() {
-		 String s = "¶«";
+		 String s = "ä¸œ";
 		 System.out.println(s.toLowerCase());
 	 }
 }

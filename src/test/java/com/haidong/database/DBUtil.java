@@ -1,5 +1,6 @@
 package com.haidong.database;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,16 +8,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.jolbox.bonecp.BoneCPConfig;
+import com.jolbox.bonecp.BoneCPDataSource;
 import com.mysql.jdbc.Statement;
 
 public class DBUtil {
 	private static Connection conn = null;  
     private static Properties pro = new Properties();  
-    //¼ÓÔØÇý¶¯,Ê¹ÓÃ¾²Ì¬¿é£¬Ö»ÐèÒª¼ÓÔØÒ»´Î  
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,Ê¹ï¿½Ã¾ï¿½Ì¬ï¿½é£¬Ö»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½  
     static {  
         try {  
             /** 
-             * ¼ÓÔØÅäÖÃÎÄ¼þµÄÁ½ÖÖ·½·¨£¬ÈÎÑ¡Ò»ÖÖ¶¼¿ÉÒÔ 
+             * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡Ò»ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½ 
              */  
             //pro.load(DBUtil.class.getResourceAsStream("/DBUtil.properties"));  
             pro.load(DBUtil.class.getClassLoader().getResourceAsStream("DBUtil.properties"));  
@@ -30,7 +33,7 @@ public class DBUtil {
         }  
           
     }  
-    //»ñÈ¡ConnectionÁ¬½Ó¶ÔÏóµÄ·½·¨,Ê¹ÓÃstatic·½±ãÖ®ºóÔÚÆäËûÀàÖÐµ÷ÓÃ  
+    //ï¿½ï¿½È¡Connectionï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½,Ê¹ï¿½ï¿½staticï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½  
     public static Connection getConn() {  
         try {  
             conn = DriverManager.getConnection(  
@@ -42,7 +45,7 @@ public class DBUtil {
         }  
         return conn;  
     }  
-    //¹Ø±Õ×ÊÔ´µÄ·½·¨  
+    //ï¿½Ø±ï¿½ï¿½ï¿½Ô´ï¿½Ä·ï¿½ï¿½ï¿½  
     public  static void close(ResultSet rs,Statement ps,Connection conn) {  
         if(rs!=null) {  
             try {  
@@ -66,4 +69,40 @@ public class DBUtil {
             }             
         }         
     }  
+    
+    public static BoneCPDataSource getDataSource() throws FileNotFoundException, IOException, SQLException
+	{
+
+		BoneCPConfig config = new BoneCPConfig();
+
+		config.setPoolName("pool");
+		config.setJdbcUrl("jdbc:postgresql://192.168.12.128:5432/postgres?charSet=UTF-8");
+		config.setUsername("postgres");
+		config.setPassword("123456");
+		config.setMinConnectionsPerPartition(0);
+		config.setMaxConnectionsPerPartition(2);
+
+		// Default Setting
+		config.setPartitionCount(1);
+		// config.setStatementsCacheSize(50);
+
+		config.setConnectionTimeoutInMs(30 * 1000);
+		config.setConnectionTestStatement("select 1");
+		config.setIdleConnectionTestPeriodInMinutes(2);
+
+		//		config.setIdleMaxAgeInSeconds(15);
+		//		config.setMaxConnectionAgeInSeconds(30);
+		config.setAcquireIncrement(1);
+
+		// config.setTransactionRecoveryEnabled(true);
+		config.setQueryExecuteTimeLimitInMs(1 * 60 * 1000);
+
+		BoneCPDataSource ds = new BoneCPDataSource(config);
+//		ds.getConnection().close();
+		ds.getConnection();
+
+	    System.out.println(config.getAcquireRetryDelayInMs() + "************************");
+
+		return ds;
+	}
 }
