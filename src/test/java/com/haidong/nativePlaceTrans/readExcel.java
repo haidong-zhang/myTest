@@ -23,8 +23,8 @@
 //		HSSFWorkbook wookbook = new HSSFWorkbook(new FileInputStream(filePath));
 //		HSSFSheet sheet = wookbook.getSheetAt(0);
 //		int rows = sheet.getPhysicalNumberOfRows();// hang
-//		int max_cells = 0;// ап
-//		// ╩Ях║вНЁ╓╣дапё╛тзй╣╪Ыжп╥╒ожхГ╧Шапжп╪Дсп©уж╣╣д╩╟ё╛дгц╢╤а╣╫©уж╣╣д╣ь╥╫╬ммёж╧ак║ёкЫртнрцгпХр╙х║╣цвНЁ╓╣дап
+//		int max_cells = 0;// О©╫О©╫
+//		// О©╫О©╫х║О©╫НЁ╓О©╫О©╫О©╫пёО©╫О©╫О©╫й╣О©╫О©╫О©╫п╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╪О©╫О©╫п©О©╫ж╣О©╫д╩О©╫О©╫О©╫О©╫О©╫ц╢О©╫О©╫О©╫О©╫О©╫О©╫ж╣О©╫д╣ь╥О©╫О©╫О©╫мёж╧О©╫к║О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╙х║О©╫О©╫О©╫НЁ╓О©╫О©╫О©╫О©╫
 //		for (int i = 0; i < rows; i++) {
 //			HSSFRow row = sheet.getRow(i);
 //			if (row != null) {
@@ -37,13 +37,13 @@
 //		for (int i = 1; i < rows; i++) {
 //			HSSFRow row = sheet.getRow(i);
 //			if (row != null) {
-//				// ╠ИюЗап
+//				// О©╫О©╫О©╫О©╫О©╫О©╫
 //				for (int j = 0; j < max_cells; j++) {
 //					HSSFCell cell = row.getCell(j);
 //					if (cell == null) {
 //						value += "NULL,";
 //					}
-//					if (cell != null) { // хГ╧Ш╡╩н╙©утыиХжцж╣
+//					if (cell != null) { // О©╫О©╫О©╫О©╫О©╫н╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╣
 //						cell.setCellType(HSSFCell.CELL_TYPE_STRING);
 //					}
 //					value = value + cell.getStringCellValue() + ",";
@@ -79,7 +79,7 @@
 //
 //	public static void main(String[] args) throws Exception {
 //		readExcel re = new readExcel();
-//		re.readExcelMethod("d:\\иМ╥щж╓╨ебКг╟6н╩ппуЧгЬ╩╝сК╪╝╧А╤тс╕╠М.xls");
+//		re.readExcelMethod("d:\\О©╫О©╫О©╫ж╓О©╫О©╫О©╫О©╫г╟6н╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫К╪╝О©╫О©╫О©╫с╕О©╫О©╫.xls");
 //		System.out.println(re.selectCard("131025"));
 //	}
 //}

@@ -5,6 +5,7 @@ import com.haidong.entity.Student;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,5 +57,20 @@ public class Java8Test {
 	@Test
 	public void testpassowrd(){
 		System.out.println(testUserNamePassword("111","hd199931"));
+	}
+
+
+	@Test
+	public void testComparing(){
+		List<String> list = Lists.newArrayList("A","TVOC","C","B");
+//		list.sort(Comparator.comparing(i ->{
+//			if(i.equals("TVOC")){
+//				return -1;
+//			}
+//			return 1;
+//		}));
+
+		list.sort(Comparator.comparing(String::toString));
+		System.out.println(list);
 	}
 }
